@@ -5,6 +5,14 @@ const express = require('express');
 //Create an application 
 const app = express();
 
+//Send back a raw message every time the server got an 
+//incoming request
+app.get('*', (req, res) => {
+
+    res.send('Express response');
+
+});
+
 //Listen on the port 3000
 app.listen(3000);
 

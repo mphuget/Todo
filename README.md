@@ -1,1 +1,1 @@
-Chapter 02 : Create the minimal Node.js server
+Chapter 03 : Answer to all incoming requests
