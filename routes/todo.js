@@ -3,10 +3,22 @@ const router = require('express').Router();
 
 //CREATE
 router.post("/todo", (req, res) => {
-    console.log(req.body.title);
-    console.log(req.body.description);
-    
-    res.json({"msg": "Create a Todo"});
+    let Todo = require('../models/todo');
+    let newTodo = Todo ({
+        title: req.body.title,
+        description : req.body.description
+    });
+  
+    newTodo.save()
+    .then((savedTodo) => {
+
+        //send back the created Todo
+        res.json(savedTodo);
+            
+    }, (err) => {
+        res.status(400).json(err)
+    });
+
 });
 
 //READ
