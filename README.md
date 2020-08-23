@@ -1,1 +1,1 @@
-Chapter 03 : Answer to all incoming requests
+Chapter 04 : Make the answer acceptable as a REST server (JSON like answer)

@@ -9,7 +9,7 @@ const app = express();
 //incoming request
 app.get('*', (req, res) => {
 
-    res.send('Express response');
+    res.json({'msg':'Express response'});
 
 });
 
