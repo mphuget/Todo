@@ -1,1 +1,1 @@
-Chapter 06 : Add syntax colouring on the console
+Chapter 07 : Propose a 404 message when the incoming request hits a wrong route
