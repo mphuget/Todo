@@ -1,1 +1,1 @@
-Chapter 01 : Create the package.json file
+Chapter 02 : Create the minimal Node.js server
