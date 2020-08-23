@@ -1,1 +1,7 @@
-This is the backend part in Node.js for Todo
+Chapter 00 : install all the software
+
+* node.js and npm
+* Visual Studio code
+* Postman
+* MongoDB
+
