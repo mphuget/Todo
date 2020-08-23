@@ -45,20 +45,22 @@ loggers.add('errorLogger', {
 
 const infoLogger = loggers.get('infoLogger');
 
-//Send back a raw message every time the server got an 
-//incoming request
-app.get('/', (req, res) => {
+//Accessing the routes for the user
+const todoRoutes = require('./routes/todo');
 
-    res.json({'msg':'You are reaching homepage'});
-
-});
+//Acces the routes 
+app.use(todoRoutes);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware
 app.use(http404.notFound);
 
 //Listen on the port 3000
-app.listen(3000);
+app.listen(3000, () => {
+    //Add info to the loggers
+    infoLogger.info('Server is running on port: 3000');
+
+});
 
 //Print out where the server is
 console.log(chalk.green("Server is running on port: 3000"));
