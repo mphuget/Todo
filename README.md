@@ -1,1 +1,1 @@
-Chapter 07 : Propose a 404 message when the incoming request hits a wrong route
+Chapter 08 : Add logging to our server with Morgan, the details are provided on the console

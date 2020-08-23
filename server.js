@@ -9,8 +9,14 @@ const chalk = require('chalk');
 //hits a wrong route
 const http404 = require('./middleware/route404');
 
+//Used for logging
+const morgan = require("morgan");
+
 //Create an application 
 const app = express();
+
+//Use the morgan logging 
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
 //Send back a raw message every time the server got an 
 //incoming request
