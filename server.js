@@ -7,9 +7,9 @@ const app = express();
 
 //Send back a raw message every time the server got an 
 //incoming request
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
 
-    res.json({'msg':'Express response'});
+    res.json({'msg':'You are reaching homepage'});
 
 });
 
