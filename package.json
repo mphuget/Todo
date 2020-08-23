@@ -16,6 +16,7 @@
   "author": "Marc-Philippe Huget",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
     "express": "^4.17.1"
   }
 }

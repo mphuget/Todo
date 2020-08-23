@@ -2,6 +2,9 @@
 //dispatch them to corresponding behaviours
 const express = require('express');
 
+//Use chalk to add colours on the console
+const chalk = require('chalk');
+
 //Create an application 
 const app = express();
 
@@ -17,4 +20,4 @@ app.get('/', (req, res) => {
 app.listen(3000);
 
 //Print out where the server is
-console.log("Server is running on port: 3000");
+console.log(chalk.green("Server is running on port: 3000"));

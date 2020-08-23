@@ -1,1 +1,1 @@
-Chapter 05 : Restricting to only some routes
+Chapter 06 : Add syntax colouring on the console
