@@ -1,1 +1,1 @@
-Chapter 12: Add connection to MongoDB
+Chapter 13: Create the Todo model
