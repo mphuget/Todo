@@ -1,1 +1,1 @@
-Chapter 08 : Add logging to our server with Morgan, the details are provided on the console
+Chapter 09 : Add more logging with Winston
