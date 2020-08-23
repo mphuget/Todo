@@ -3,6 +3,9 @@ const router = require('express').Router();
 
 //CREATE
 router.post("/todo", (req, res) => {
+    console.log(req.body.title);
+    console.log(req.body.description);
+    
     res.json({"msg": "Create a Todo"});
 });
 

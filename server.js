@@ -5,6 +5,9 @@ const express = require('express');
 //Use chalk to add colours on the console
 const chalk = require('chalk');
 
+//to access form data
+let bodyParser = require('body-parser');
+
 //The 404 middleware used when an incoming request
 //hits a wrong route
 const http404 = require('./middleware/route404');
@@ -21,6 +24,15 @@ const {loggers, transports, format} = require("winston");
 //Create an application 
 const app = express();
 
+//used to fetch the data from forms on HTTP POST, and PUT
+app.use(bodyParser.urlencoded({
+
+    extended : true
+  
+  }));
+  
+app.use(bodyParser.json());
+  
 //Use the morgan logging 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
