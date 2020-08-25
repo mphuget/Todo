@@ -29,7 +29,7 @@ function readTodos(req, res) {
     });
  }
 
- function readTodo(req, res) {
+function readTodo(req, res) {
 
     let Todo = require("../models/todo");
 
@@ -41,7 +41,22 @@ function readTodos(req, res) {
     });
  }
 
- function deleteTodo(req, res) {
+function updateTodo(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.findByIdAndUpdate({_id: req.params.id}, 
+        {title : req.body.title, 
+        description : req.body.description}, 
+        {new : true})
+    .then((updatedTodo) => {
+        res.status(200).json(updatedTodo);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+}
+
+function deleteTodo(req, res) {
 
     let Todo = require("../models/todo");
 
@@ -57,3 +72,4 @@ module.exports.create = createTodo;
 module.exports.reads = readTodos;
 module.exports.read = readTodo;
 module.exports.delete = deleteTodo;
+module.exports.update = updateTodo;

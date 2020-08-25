@@ -25,15 +25,17 @@ router.get("/todo/:id", (req, res) => {
 });
 
 //UPDATE
-router.put("/todo", (req, res) => {
-    res.json({"msg": "Update a Todo"});
+router.put("/todo/:id", (req, res) => {
+    
+    controller.update(req, res);
+
 });
 
 //DELETE
 router.delete("/todo/:id", (req, res) => {
     
     controller.delete(req, res);
-    
+
 });
 
 module.exports = router;
