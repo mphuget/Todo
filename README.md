@@ -1,1 +1,1 @@
-Chapter 17: Read one specific todo
+Chapter 18 : Delete a specific todo

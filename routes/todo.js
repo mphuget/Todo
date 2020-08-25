@@ -30,8 +30,10 @@ router.put("/todo", (req, res) => {
 });
 
 //DELETE
-router.delete("/todo", (req, res) => {
-    res.json({"msg": "Delete a Todo"});
+router.delete("/todo/:id", (req, res) => {
+    
+    controller.delete(req, res);
+    
 });
 
 module.exports = router;

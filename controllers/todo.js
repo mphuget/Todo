@@ -41,6 +41,19 @@ function readTodos(req, res) {
     });
  }
 
+ function deleteTodo(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.findOneAndRemove({_id : req.params.id})
+    .then((deletedTodo) => {
+        res.status(200).json(deletedTodo);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
 module.exports.create = createTodo;
 module.exports.reads = readTodos;
 module.exports.read = readTodo;
+module.exports.delete = deleteTodo;
