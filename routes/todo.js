@@ -8,12 +8,14 @@ const controller = require('../controllers/todo');
 router.post("/todo", (req, res) => {
 
     controller.create(req, res);
-    
+
 });
 
 //READ
 router.get("/todos", (req, res) => {
-    res.json({"msg": "Read all the todos"});
+    
+    controller.reads(req, res);
+
 });
 
 router.get("/todo", (req, res) => {

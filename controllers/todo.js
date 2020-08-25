@@ -17,4 +17,17 @@ function createTodo(req, res) {
 
 }
 
+function readTodos(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.find({})
+    .then((todos) => {
+        res.status(200).json(todos);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
 module.exports.create = createTodo;
+module.exports.reads = readTodos;
