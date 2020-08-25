@@ -29,5 +29,18 @@ function readTodos(req, res) {
     });
  }
 
+ function readTodo(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.findById({_id : req.params.id})
+    .then((todo) => {
+        res.status(200).json(todo);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
 module.exports.create = createTodo;
 module.exports.reads = readTodos;
+module.exports.read = readTodo;

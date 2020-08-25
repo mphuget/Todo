@@ -18,8 +18,10 @@ router.get("/todos", (req, res) => {
 
 });
 
-router.get("/todo", (req, res) => {
-    res.json({"msg": "Read a todo"});
+router.get("/todo/:id", (req, res) => {
+    
+    controller.read(req, res);
+
 });
 
 //UPDATE

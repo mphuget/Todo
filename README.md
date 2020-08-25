@@ -1,1 +1,1 @@
-Chapter 16: Read all the todos
+Chapter 17: Read one specific todo
