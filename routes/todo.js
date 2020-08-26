@@ -38,4 +38,17 @@ router.delete("/todo/:id", (req, res) => {
 
 });
 
+//COMPLETED
+router.post("/todo/:id/done", (req, res) => {
+
+    controller.done(req, res);
+
+});
+
+router.post("/todo/:id/undone", (req, res) => {
+
+    controller.undone(req, res);
+
+});
+
 module.exports = router;

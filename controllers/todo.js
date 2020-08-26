@@ -68,8 +68,40 @@ function deleteTodo(req, res) {
     });
  }
 
+function done(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.findByIdAndUpdate({_id: req.params.id}, 
+        {done : true}, 
+        {new : true})
+    .then((updatedTodo) => {
+        res.status(200).json(updatedTodo);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+
+}
+
+function undone(req, res) {
+
+    let Todo = require("../models/todo");
+
+    Todo.findByIdAndUpdate({_id: req.params.id}, 
+        {done : false}, 
+        {new : true})
+    .then((updatedTodo) => {
+        res.status(200).json(updatedTodo);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+
+}
+
 module.exports.create = createTodo;
 module.exports.reads = readTodos;
 module.exports.read = readTodo;
 module.exports.delete = deleteTodo;
 module.exports.update = updateTodo;
+module.exports.done = done;
+module.exports.undone = undone;
